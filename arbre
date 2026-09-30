@@ -1,0 +1,37 @@
+package exercice;
+import java.util.ArrayList;
+
+public class exo1 {
+	public class Noeud {
+		private int valeur;
+		private Noeud gauche;
+		private Noeud droite; 
+		
+		
+		public Noeud(int valeur) {
+			this.valeur = valeur;
+			this.gauche = null;
+			this.droite = null;
+		}
+			// Getters et setters
+		public int getValeur() { return valeur; }
+		public void setValeur(int valeur) { this.valeur = valeur; }
+		    
+		public Noeud getGauche() { return gauche; }
+		public void setGauche(Noeud gauche) { this.gauche = gauche; }
+		    
+		public Noeud getDroit() { return droite; }
+		public void setDroit(Noeud droite) { this.droite = droite; }
+		
+		public void parcourPrefixe(Noeud depart) {
+			if (depart == null) {
+	            return ;
+			}
+	        else {
+	        	System.out.print(depart.getValeur() + " ");  
+	        	parcourPrefixe(depart.getGauche());  
+	        	parcourPrefixe(depart.getDroit());   
+	        	}
+			} 
+		}
+}
